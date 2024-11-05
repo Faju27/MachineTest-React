@@ -28,11 +28,10 @@ const ProductList = ({product,cart}) => {
             setCartList([product, ...cartList])
         }
         return toast.success('Product added to cart ')
-        // console.log(cartList),
-        // console.log(product)
+
     }
 
-    const removeFromCart = () => {
+    const removeCartProduct = () => {
         const res =  cartList.filter(ele => ele.id != product.id)
         setCartList(res)
         return toast.success("Product removed from cart")
@@ -57,7 +56,7 @@ const ProductList = ({product,cart}) => {
 
 
     return (
-        <div key={product.id} className='border border-black p-2 bg-light rounded-2' style={{width:'15rem',cursor:'pointer'}}>
+        <div key={product.id} className='border border-black p-2 bg-light rounded-2' style={{height:400,width:'15rem',cursor:'pointer'}}>
             <div onClick={() => navigate(`/product/${product.id}`)}>
                 <img src={product.images[0]} alt="" style={{width:'100%',height:'250px'}}/>
             </div>
@@ -92,7 +91,7 @@ const ProductList = ({product,cart}) => {
                 {
                     !cart ?
                     <button className='btn btn-outline-success w-100 mt-3' onClick={() => handleAddToCart()}>Add to Cart</button>
-                    : <button className='btn btn-outline-success w-100 mt-3' onClick={() => removeFromCart()}>Remove From Cart</button>
+                    : <button className='btn btn-outline-success w-100 mt-3' onClick={() => removeCartProduct()}>Remove</button>
                 }
             </div>
         </div>

@@ -38,7 +38,7 @@ const CartPage = () => {
                 </Container>
             </Navbar>
 
-            <div className='d-flex flex-wrap gap-4 justify-content-center py-5 bg-warning-subtle' >
+            <div className='d-flex flex-wrap gap-4 justify-content-center py-5 bg-warning-subtle'  style={{height:'100vh'}}>
                 {
                     cartList.map((product) => {
                         return <ProductList 
