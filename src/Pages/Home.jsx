@@ -7,37 +7,37 @@ const Home = () => {
 
     const { productList, setProductList, searchItem } = useContext(ProductContext)
 
-    // useEffect(() => {
-    //     const handleProducts = async () => {
-    //      try {
-    //          fetch("https://dummyjson.com/products")
-    //          .then(res => res.json())
-    //          .then(filteredData=> filteredData.products.filter(product => product.title.toLowerCase().includes(searchItem.toLowerCase())))
-    //          .then(products => setProductList(products))
-    //      } catch (error) {
-    //          console.log(error.message);
-    //      }
-    //     } 
-    //     handleProducts()
+    useEffect(() => {
+        const handleProducts = async () => {
+         try {
+             fetch("https://dummyjson.com/products")
+             .then(res => res.json())
+             .then(filteredData=> filteredData.products.filter(product => product.title.toLowerCase().includes(searchItem.toLowerCase())))
+             .then(products => setProductList(products))
+         } catch (error) {
+             console.log(error.message);
+         }
+        } 
+        handleProducts()
          
-    //  }, [searchItem]);
+     }, [searchItem]);
 
-     useEffect(() => {
-        const getProduct = async () => {
-            try {
-                const response = await fetch("https://dummyjson.com/products")
-                const result = await response.json()
-                const filteredData = result.products.filter((product) => product.title.toLowerCase().includes(searchItem.toLowerCase()))
-                setProductList(filteredData)
+    //  useEffect(() => {
+    //     const getProduct = async () => {
+    //         try {
+    //             const response = await fetch("https://dummyjson.com/products")
+    //             const result = await response.json()
+    //             const filteredData = result.products.filter((product) => product.title.toLowerCase().includes(searchItem.toLowerCase()))
+    //             setProductList(filteredData)
 
 
-            } catch (error) {
-                console.log(error.message);
-            }
-        }
-        getProduct()
+    //         } catch (error) {
+    //             console.log(error.message);
+    //         }
+    //     }
+    //     getProduct()
 
-    }, [searchItem])
+    // }, [searchItem])
 
 
 

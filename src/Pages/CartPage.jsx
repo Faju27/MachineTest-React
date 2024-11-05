@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import { ProductContext } from '../Provider/ProductProvider';
 import { Container, Form, Navbar } from "react-bootstrap";
 import { MdHome, MdPerson } from 'react-icons/md';
@@ -9,7 +9,6 @@ const CartPage = () => {
 
     const {searchItem, setSearchItem, cartList} = useContext(ProductContext)
     const navigate = useNavigate()
-
 
 
     return (
